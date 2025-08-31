@@ -1,0 +1,20 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    ".vitepress/theme/**/*",
+    ".vitepress/theme/**/*.vue",
+    "src/**/*.md"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@gavgrego/livery-vue": ["../livery-vue/src/index.ts"]
+    }
+  },
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"]
+  }
+}

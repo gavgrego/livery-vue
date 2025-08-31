@@ -1,0 +1,84 @@
+{
+  "private": true,
+  "name": "@gavgrego/livery-vue",
+  "version": "0.0.0",
+  "author": "",
+  "license": "",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/gavgrego/livery-vue",
+  "bugs": "https://github.com/gavgrego/livery-vue/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavgrego/livery-vue.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/livery-vue.cjs",
+  "module": "dist/livery-vue.esm-bundler.prod.mjs",
+  "unpkg": "dist/livery-vue.global.dev.js",
+  "jsdelivr": "dist/livery-vue.global.dev.js",
+  "types": "dist/livery-vue.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/livery-vue.d.ts",
+      "import": {
+        "development": "./dist/livery-vue.esm.dev.mjs",
+        "default": "./dist/livery-vue.esm-bundler.prod.mjs"
+      },
+      "require": "./dist/livery-vue.cjs"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.16.5",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "copyfiles": "^2.4.1",
+    "jsdom": "^26.1.0",
+    "npm-run-all2": "^8.0.4",
+    "publint": "^0.3.12",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.11",
+    "typescript": "~5.8.0",
+    "vite": "^7.0.6",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.18",
+    "vue-tsc": "^3.0.4"
+  },
+  "scripts": {
+    "clean:dist": "rimraf dist",
+    "clean": "rimraf dist coverage README.md",
+    "test:unit": "vitest --environment jsdom",
+    "coverage": "vitest run --coverage --environment jsdom",
+    "type-check": "vue-tsc --build",
+    "lint:package": "publint",
+    "build:copy": "copyfiles -f ../../README.md .",
+    "build:dev": "vite build --mode development",
+    "build:neutral": "vite build --mode neutral",
+    "build:prod": "vite build --mode production",
+    "build": "run-s clean:dist build:* type-check lint:package"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.542.0",
+    "reka-ui": "^2.5.0",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.3.7"
+  }
+}
