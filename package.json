@@ -41,5 +41,7 @@
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --fix"
-  }
+  },
+  "name": "livery-vue",
+  "version": "0.1.0"
 }
