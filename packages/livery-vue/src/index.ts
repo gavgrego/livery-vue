@@ -1,3 +1,4 @@
+// Auto-import styles - users don't need to manually import CSS
 import "./index.css";
 
 export { default as ExampleComponent } from "./components/ExampleComponent.vue";

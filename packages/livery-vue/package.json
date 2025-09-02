@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@gavgrego/livery-vue",
-  "version": "0.0.0",
+  "version": "0.1.5",
   "author": "",
   "license": "",
   "description": "",
@@ -28,6 +28,7 @@
       },
       "require": "./dist/livery-vue.cjs"
     },
+    "./style": "./dist/livery-vue.css",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },
