@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "name": "@gavgrego/livery-vue",
   "version": "0.0.0",
   "author": "",
