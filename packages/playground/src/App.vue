@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Progress } from "@gavgrego/livery-vue";
+import { Button, Progress, DropdownMenu } from "@gavgrego/livery-vue";
 import { ref } from "vue";
 
 const progress = ref(50);
@@ -27,5 +27,14 @@ setInterval(() => {
     <Button variant="default" size="icon">Icon</Button>
     <h3 class="text-xl font-bold">Progress</h3>
     <Progress :model-value="progress" />
+    <h3 class="text-xl font-bold">DropdownMenu</h3>
+    <DropdownMenu trigger="Open">
+      <template #header>
+        <h3>Header</h3>
+      </template>
+      <template #content>
+        <h3>Content</h3>
+      </template>
+    </DropdownMenu>
   </div>
 </template>
