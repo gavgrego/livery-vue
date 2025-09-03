@@ -1,4 +1,4 @@
-// Auto-import styles - users don't need to manually import CSS
+// Import CSS so Vite can extract it to a separate file
 import "./index.css";
 
 export { default as ExampleComponent } from "./components/ExampleComponent.vue";

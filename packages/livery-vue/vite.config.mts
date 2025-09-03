@@ -66,7 +66,6 @@ export default defineConfig(({ mode }): UserConfig => {
       target: "es2019",
       emptyOutDir: false,
       minify: mode === "production",
-
       lib: {
         entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
         name: "LiveryVue",
