@@ -5,6 +5,7 @@ export { default as ExampleComponent } from "./components/ExampleComponent.vue";
 export { default as MyPanel } from "./components/MyPanel.vue";
 export { default as MyPanelSection } from "./components/MyPanelSection.vue";
 export { default as Button } from "./components/ui/button/Button.vue";
+export { default as Progress } from "./components/ui/progress/Progress.vue";
 
 if (__DEV__) {
   console.log("[@gavgrego/livery-vue] dev mode");

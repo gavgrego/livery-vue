@@ -1,5 +1,16 @@
 <script setup lang="ts">
-import { Button } from "@gavgrego/livery-vue";
+import { Button, Progress } from "@gavgrego/livery-vue";
+import { ref } from "vue";
+
+const progress = ref(50);
+
+setInterval(() => {
+  progress.value += 10;
+
+  if (progress.value > 100) {
+    progress.value = 0;
+  }
+}, 1000);
 </script>
 
 <template>
@@ -14,5 +25,7 @@ import { Button } from "@gavgrego/livery-vue";
     <Button variant="default" size="sm">Small</Button>
     <Button variant="default" size="lg">Large</Button>
     <Button variant="default" size="icon">Icon</Button>
+    <h3 class="text-xl font-bold">Progress</h3>
+    <Progress :model-value="progress" />
   </div>
 </template>
