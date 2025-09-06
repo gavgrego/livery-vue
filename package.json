@@ -43,5 +43,9 @@
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --fix"
   },
   "name": "livery-vue",
-  "version": "0.1.5"
+  "version": "0.1.5",
+  "dependencies": {
+    "@tanstack/vue-query": "^5.87.1",
+    "@tanstack/vue-table": "^8.21.3"
+  }
 }
