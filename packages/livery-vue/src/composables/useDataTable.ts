@@ -1,4 +1,4 @@
-import { ref, type Ref } from "vue";
+import { ref, type MaybeRef } from "vue";
 import {
   getCoreRowModel,
   getFilteredRowModel,
@@ -10,7 +10,7 @@ import {
 } from "@tanstack/vue-table";
 
 type UseDataTableProps<T> = {
-  data: Ref<T[]>;
+  data: MaybeRef<T[]>;
   columns: ColumnDef<T>[];
 };
 
