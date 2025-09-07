@@ -29,9 +29,7 @@ const useDataTable = <T>({ data, columns }: UseDataTableProps<T>) => {
     },
   });
 
-  return {
-    dataTable,
-  };
+  return dataTable;
 };
 
 export default useDataTable;

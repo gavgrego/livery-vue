@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { Button, Progress, DropdownMenu } from "@gavgrego/livery-vue";
+import {
+  Button,
+  Progress,
+  DropdownMenu,
+  DataTable,
+} from "@gavgrego/livery-vue";
 import { ref } from "vue";
+import useSearchTable from "./composables/useSearchTable";
 
 const progress = ref(50);
-
+const { dataTable } = useSearchTable();
 setInterval(() => {
   progress.value += 10;
 
@@ -11,6 +17,8 @@ setInterval(() => {
     progress.value = 0;
   }
 }, 1000);
+
+console.log(dataTable);
 </script>
 
 <template>
@@ -36,5 +44,7 @@ setInterval(() => {
         <h3>Content</h3>
       </template>
     </DropdownMenu>
+    <h3 class="text-xl font-bold">DataTable</h3>
+    <DataTable :table="dataTable" />
   </div>
 </template>
