@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { FlexRender, type Table as TTable } from "@tanstack/vue-table";
+import DataTablePagination from "@/components/DataTablePagination.vue";
 
 type DataTableProps<T> = {
   table: TTable<T>;
@@ -46,5 +47,6 @@ const { table } = defineProps<DataTableProps<T>>();
         </TableRow>
       </TableBody>
     </Table>
+    <DataTablePagination :table="table" />
   </div>
 </template>

@@ -1,6 +1,7 @@
 import { ref, type Ref } from "vue";
 import { useDataTable } from "@gavgrego/livery-vue";
 import { createColumnHelper, type ColumnDef } from "@tanstack/vue-table";
+import { faker } from "@faker-js/faker";
 
 type Award = {
   id: number;
@@ -13,28 +14,25 @@ type Award = {
   first: number;
 };
 
-const data: Ref<Award[]> = ref([
-  {
-    id: 1,
-    lastSeen: "2021-01-01",
-    origin: "LAX",
-    destination: "SFO",
-    economy: 100,
-    premium: 200,
-    business: 300,
-    first: 400,
-  },
-  {
-    id: 2,
-    lastSeen: "2021-01-02",
-    origin: "LAX",
-    destination: "SFO",
-    economy: 100,
-    premium: 200,
-    business: 300,
-    first: 400,
-  },
-]);
+const generateAward = (id: number): Award => {
+  const departure = faker.airline.airport();
+  const arrival = faker.airline.airport();
+
+  return {
+    id,
+    lastSeen: faker.date.recent({ days: 365 }).toISOString().split("T")[0],
+    origin: departure.iataCode,
+    destination: arrival.iataCode,
+    economy: faker.number.int({ min: 50, max: 1200 }),
+    premium: faker.number.int({ min: 75, max: 2000 }),
+    business: faker.number.int({ min: 100, max: 3000 }),
+    first: faker.number.int({ min: 150, max: 5000 }),
+  };
+};
+
+const data: Ref<Award[]> = ref(
+  Array.from({ length: 239 }, (_, index) => generateAward(index + 1))
+);
 
 const columnHelper = createColumnHelper<Award>();
 

@@ -45,6 +45,8 @@ console.log(dataTable);
       </template>
     </DropdownMenu>
     <h3 class="text-xl font-bold">DataTable</h3>
+  </div>
+  <div>
     <DataTable :table="dataTable" />
   </div>
 </template>
