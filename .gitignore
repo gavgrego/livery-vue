@@ -30,3 +30,6 @@ packages/livery-vue/README.md
 *.sw?
 
 *.tsbuildinfo
+
+*storybook.log
+storybook-static
